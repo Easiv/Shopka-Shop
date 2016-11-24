@@ -1,0 +1,9 @@
+{{#if session.isAuthenticated}}
+
+   <img class="image" src="{{session.currentUser.photoURL}}" width="50" height="50"/>
+  {{session.currentUser.displayName}}
+
+  {{#paper-button onClick=(action "signOut")}}Sign out{{/paper-button}}
+{{else}}
+  {{#paper-button onClick=(action "signIn" 'google')}}Sign in{{/paper-button}}
+{{/if}}

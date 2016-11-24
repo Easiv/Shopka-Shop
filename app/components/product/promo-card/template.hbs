@@ -1,0 +1,19 @@
+{{#paper-card as |card|}}
+  {{card.image src=product.imageUrl alt="Washed Out" title=product.name}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}{{product.name}}{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.actions class="layout-row layout-align-start-center" as |actions|}}
+    {{#actions.icons}}
+      {{#paper-button iconButton=true}}{{paper-icon 'favorite'}}{{/paper-button}}
+      {{#paper-button iconButton=true}}{{paper-icon 'share'}}{{/paper-button}}
+    {{/actions.icons}}
+    {{#link-to 'products.product' product}}
+      {{#paper-button}}show more{{/paper-button}}
+    {{/link-to}}
+  {{/card.actions}}
+{{/paper-card}}
+
+{{yield}}

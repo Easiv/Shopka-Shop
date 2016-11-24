@@ -1,0 +1,9 @@
+{{ layout.top-navigation toggleSideNav=(action 'toggleSideNav') }}
+
+{{#paper-sidenav-container class="inner-sidenav"}}
+
+  {{ layout.side-navigation leftSideBarOpen=leftSideBarOpen }}
+  
+  {{outlet}}
+
+  {{/paper-sidenav-container}}

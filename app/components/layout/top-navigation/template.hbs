@@ -1,0 +1,22 @@
+<div class="toolbar">
+  {{#paper-toolbar accent=isAccent as |toolbar|}}
+    {{#toolbar.tools}}
+      {{#paper-button classNames="hide-gt-sm" iconButton=true onClick=(action toggleSideNav)}}
+        {{paper-icon "reorder" }}
+      {{/paper-button}}
+
+      {{#link-to 'index'}}
+        {{#paper-button}}
+          <h1> Shopka Rotten Store  </h1>
+        {{/paper-button}}
+      {{/link-to}}
+      {{#paper-switch value=isAccent onChange=(action (mut isAccent))}}
+        {{if isAccent "rotten" "not rotten"}}
+      {{/paper-switch}}
+
+
+      <span class="flex"></span>
+      <h2>{{session-ui}}</h2>
+    {{/toolbar.tools}}
+  {{/paper-toolbar}}
+</div>
